@@ -33,7 +33,7 @@ func (a addingToDB) AddUserToDB(newUser CR.User) string{
 		if(validData == "valid") {
 			pswd := fr.createPswd(5)
 			err = userColl.Insert(&CR.UserCollStruct{Fname:newUser.Fname, MI:newUser.MI, Lname:newUser.Lname, Email:newUser.Email,
-				Pswd:pswd})
+				Pswd:pswd, IsActive:newUser.IsActive})
 			if err != nil {
 				statusMsg = "Error inserting user in DB"
 				panic(err)
@@ -56,10 +56,10 @@ func (a addingToDB) CreateAnnouncements(newAnn CR.Announcement) string{
 	defer session.Close()
 	annColl := session.DB(CR.DBInstance).C(CR.AnnouncementsColl)
 
-	annColl.Find(bson.M{}).Sort("-AnnID").Limit(1).One(&maxId)
+	annColl.Find(bson.M{}).Sort("-annid").Limit(1).One(&maxId)
 	newAnn.AnnID = maxId.AnnID+1
 	err = annColl.Insert(&CR.Announcement{AnnID:newAnn.AnnID, AnnTitle:newAnn.AnnTitle,
-		AnnText:newAnn.AnnText, AnnDate:newAnn.AnnDate, AnnActive:true})
+		AnnText:newAnn.AnnText, AnnDate:newAnn.AnnDate, AnnActive:newAnn.AnnActive})
 	if err!= nil{
 		statusMsg = "Error connecting to DB"
 		panic(err)

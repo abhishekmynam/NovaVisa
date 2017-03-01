@@ -16,8 +16,8 @@ func main() {
 	//updateUser()
 	//createAnnouncement()
 	//updateAnnouncement()
-	//getUsers()
-	getannouncements()
+	getUsers()
+	//getannouncements()
 }
 
 func getUsers(){
@@ -26,7 +26,7 @@ func getUsers(){
 }
 
 func getannouncements(){
-	annList := SR.GetFromDB().GetAnnouncementList()
+	annList := SR.GetFromDB().GetAllAnnouncementList()
 	fmt.Println(annList)
 }
 func pswdGen(){
@@ -44,7 +44,7 @@ func createUser(){
 	user.Fname = "Abhishek123"
 	user.Lname = "Mynam123"
 	user.MI = "H123"
-	user.Email = "abhishek.mynam123@gmail.com"
+	user.Email = "aabhishek.mynam123@gmail.com"
 	msg := SR.AddToDB().AddUserToDB(user)
 	fmt.Println(msg)
 }
@@ -74,7 +74,7 @@ func createAnnouncement(){
 	var ann CR.Announcement
 	ann.AnnTitle ="test announcement1"
 	ann.AnnText = "jumping japang 123"
-	ann.AnnActive = true
+	ann.AnnActive = false
 	ann.AnnDate = time.Now().Format("20060102150405")
 	msg := SR.AddToDB().CreateAnnouncements(ann)
 	fmt.Println(msg)

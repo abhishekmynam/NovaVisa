@@ -30,7 +30,7 @@ func (u updatingDB)UpdateUser(newUser CR.User)string{
 	validData := fr.validateData(newUser)
 	if(validData == "valid") {
 		err = userColl.Update(bson.M{"email":newUser.Email},&CR.UserCollStruct{Fname:newUser.Fname, MI:newUser.MI, Lname:newUser.Lname,
-			Email:newUser.Email, Pswd:newUser.Pswd})
+			Email:newUser.Email, Pswd:newUser.Pswd, IsActive:newUser.IsActive})
 		if err != nil {
 			statusMsg = "Error updating user in DB"
 			panic(err)
