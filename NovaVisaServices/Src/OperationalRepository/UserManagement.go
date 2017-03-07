@@ -25,6 +25,7 @@ func (u userMgmt)NewUserAddition(newUser CR.User)string{
 
 func (u userMgmt)UserUpdate(newUser CR.User)string{
 	var statusMsg string
+	newUser.Pswd =SR.FuncRep().EncryptPswd(newUser.Pswd)
 	statusMsg = SR.UpdateData().UpdateUser(newUser)
 	return statusMsg
 }

@@ -10,6 +10,7 @@ import(	"crypto/rand"
 type funcRep interface {
 	createPswd(n int)string
 	validateData(ConfigRepository.User)string
+	EncryptPswd (pswd string)string
 }
 type functionalRep struct{}
 
@@ -24,6 +25,11 @@ func (f functionalRep)createPswd(n int)string{
 	}
 	s := fmt.Sprintf("%X", b)
 	return s
+}
+
+func (f functionalRep)EncryptPswd (pswd string)string{
+	var newPswd string
+	return newPswd
 }
 
 func (f functionalRep) validateData(user ConfigRepository.User)string{

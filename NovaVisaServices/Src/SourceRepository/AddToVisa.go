@@ -24,6 +24,7 @@ func (a addingToDB) AddUserToDB(newUser CR.User) string{
 		panic(err)
 	}
 	defer session.Close()
+	session.SetMode(mgo.Monotonic, true)
 	userColl := session.DB(CR.DBInstance).C(CR.UserMasterColl)
 
 	err = userColl.Find(bson.M{"email":newUser.Email}).One((&existingUser))
