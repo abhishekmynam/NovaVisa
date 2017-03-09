@@ -14,9 +14,9 @@ func main() {
 	//validateData()
 	//createUser()
 	//updateUser()
-	//createAnnouncement()
+	createAnnouncement()
 	//updateAnnouncement()
-	getUsers()
+	//getUsers()
 	//getannouncements()
 }
 
@@ -44,7 +44,7 @@ func createUser(){
 	user.Fname = "Abhishek123"
 	user.Lname = "Mynam123"
 	user.MI = "H123"
-	user.Email = "aabhishek.mynam123@gmail.com"
+	user.Email = "aabhishek.mynam2@gmail.com"
 	msg := SR.AddToDB().AddUserToDB(user)
 	fmt.Println(msg)
 }
@@ -72,7 +72,7 @@ func updateUser(){
 
 func createAnnouncement(){
 	var ann CR.Announcement
-	ann.AnnTitle ="test announcement1"
+	ann.AnnTitle ="test announcement3"
 	ann.AnnText = "jumping japang 123"
 	ann.AnnActive = false
 	ann.AnnDate = time.Now().Format("20060102150405")
