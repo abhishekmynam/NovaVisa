@@ -8,6 +8,7 @@ import(	CR "ConfigRepository"
 type addToDB interface {
 	AddUserToDB(CR.User)string
 	CreateAnnouncements(newAnn CR.Announcement) string
+	CreateNewEvent (newEvent CR.Events) string
 }
 type addingToDB struct{}
 
@@ -62,8 +63,66 @@ func (a addingToDB) CreateAnnouncements(newAnn CR.Announcement) string{
 	err = annColl.Insert(&CR.Announcement{AnnID:newAnn.AnnID, AnnTitle:newAnn.AnnTitle,
 		AnnText:newAnn.AnnText, AnnDate:newAnn.AnnDate, AnnActive:newAnn.AnnActive})
 	if err!= nil{
-		statusMsg = "Error connecting to DB"
+		statusMsg = "Error creating announcement"
 		panic(err)
 	}else{ statusMsg = "created new announcement"}
 	return statusMsg
 }
+
+
+func (a addingToDB) CreateNewEvent (newEvent CR.Events) string{
+	var statusMsg string
+	var maxEventId CR.Events
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		statusMsg = "Error connecting to DB"
+		panic(err)
+	}
+	defer session.Close()
+	eventColl := session.DB(CR.DBInstance).C(CR.EventsColl)
+
+	eventColl.Find(bson.M{}).Sort("-eventid").Limit(1).One(&maxEventId)
+	newEvent.EventId = maxEventId.EventId+1
+
+	err = eventColl.Insert(&CR.Events{EventId:newEvent.EventId, EventTitle:newEvent.EventTitle, EventDate:newEvent.EventDate,
+				EventPostDate:newEvent.EventPostDate, EventCutOffDate:newEvent.EventCutOffDate, EventActive:newEvent.EventActive})
+
+	if err!= nil{
+		statusMsg = "Error Creating event"
+		panic(err)
+	}else{ statusMsg = "created new event"}
+	return statusMsg
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

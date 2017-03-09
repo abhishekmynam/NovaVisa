@@ -1,0 +1,14 @@
+namespace FlatBufs;
+table Announcement{
+	AnnId:int;
+	AnnTitle:string;
+	AnnText:string;
+	AnnDate:string;
+	AnnActive:bool= false;
+}
+
+table AnnouncementList{
+	AnnName:string;
+	AnnList:[Announcement];
+}
+root_type AnnouncementList

@@ -14,7 +14,7 @@ type UserManagement interface{
 type userMgmt struct{}
 
 func UserManage() UserManagement{
-	return userMgmt{}
+	return &userMgmt{}
 }
 
 func (u userMgmt)NewUserAddition(newUser CR.User)string{

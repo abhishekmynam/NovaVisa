@@ -27,3 +27,22 @@ type Announcement struct{
 	AnnDate string
 	AnnActive bool
 }
+
+type Events struct {
+	EventId int
+	EventTitle string
+	EventPostDate string
+	EventDate string
+	EventCutOffDate string
+	EventActive bool
+}
+
+func BoolToByte(str bool) byte {
+	switch str {
+		case true:
+			return 1
+		case false:
+			return 0
+	}
+	return 0
+}

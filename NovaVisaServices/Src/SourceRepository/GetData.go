@@ -3,6 +3,7 @@ package SourceRepository
 import(	CR "ConfigRepository"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"time"
 )
 
 type getFromDB interface {
@@ -10,6 +11,8 @@ type getFromDB interface {
 	GetAnnouncementList() []CR.Announcement
 	GetAllAnnouncementList() []CR.Announcement
 	GetAuthPswd (email string)string
+	GetActiveEventsList() []CR.Events
+	GetAllEventsList() []CR.Events
 }
 
 type gettingFromDB struct{}
@@ -68,6 +71,59 @@ func (g gettingFromDB) GetAllAnnouncementList() []CR.Announcement{
 	}
 	return anncmtList
 }
+
+func (g gettingFromDB) GetAllEventsList() []CR.Events{
+	var eventList []CR.Events
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	eventColl := session.DB(CR.DBInstance).C(CR.EventsColl)
+
+	err = eventColl.Find(bson.M{}).Select(nil).Sort("eventid").All(&eventList)
+	if err!= nil{
+		panic(err)
+	}
+	return eventList
+
+}
+
+func (g gettingFromDB) GetActiveEventsList() []CR.Events{
+	var eventList []CR.Events
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	eventColl := session.DB(CR.DBInstance).C(CR.EventsColl)
+
+	err = eventColl.Find(bson.M{"eventactive":true,"eventdate":bson.M{"$gte":time.Now().Format("20060102150405")}}).Select(nil).Sort("eventid").All(&eventList)
+	if err!= nil{
+		panic(err)
+	}
+	return eventList
+
+	/*
+	bson.M{
+    "queryPlanner": bson.M{
+    "plannerVersion":1,
+    "namespace":"hairbuddy.events",
+    "indexFilterSet":false,
+    "parsedQuery": bson.M{
+        "$and":[]interface {}{
+            bson.M{
+                "employee": bson.M{"$eq":"57c36bdfe5b07e10ae5526ee"}
+            },
+            bson.M{
+                "start":bson.M{"$lte":1474491600}
+            },
+            bson.M{
+                "start": bson.M{"$gte":1474462800}
+            } */
+
+}
+
 
 func (g gettingFromDB) GetAuthPswd (email string)string{
 	var pswd CR.UserCollStruct
