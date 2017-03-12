@@ -8,7 +8,10 @@ import(	CR "ConfigRepository"
 type addToDB interface {
 	AddUserToDB(CR.User)string
 	CreateAnnouncements(newAnn CR.Announcement) string
-	CreateNewEvent (newEvent CR.Events) string
+	CreateNewEvent (newEvent CR.Events) int
+	CreateEventDesc(eventDetail CR.EventDetails) string
+	CreateComments(comment string, eventId int)string
+	CreatePoll (poll CR.Polling) string
 }
 type addingToDB struct{}
 
@@ -70,12 +73,10 @@ func (a addingToDB) CreateAnnouncements(newAnn CR.Announcement) string{
 }
 
 
-func (a addingToDB) CreateNewEvent (newEvent CR.Events) string{
-	var statusMsg string
+func (a addingToDB) CreateNewEvent (newEvent CR.Events) int{
 	var maxEventId CR.Events
 	session, err:= mgo.Dial(CR.DBserver)
 	if err!= nil{
-		statusMsg = "Error connecting to DB"
 		panic(err)
 	}
 	defer session.Close()
@@ -88,11 +89,75 @@ func (a addingToDB) CreateNewEvent (newEvent CR.Events) string{
 				EventPostDate:newEvent.EventPostDate, EventCutOffDate:newEvent.EventCutOffDate, EventActive:newEvent.EventActive})
 
 	if err!= nil{
-		statusMsg = "Error Creating event"
 		panic(err)
-	}else{ statusMsg = "created new event"}
-	return statusMsg
+	}
+	return maxEventId.EventId+1
 
+}
+
+func (a addingToDB) CreateEventDesc(eventDetail CR.EventDetails) string{
+	var statusMsg string
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	eventColl := session.DB(CR.DBInstance).C(CR.EventDetailColl)
+	err = eventColl.Insert(&CR.EventDetails{EventId:eventDetail.EventId,EventDetail:eventDetail.EventDetail,EventPollId:eventDetail.EventPollId,
+				EventLiveStreaming:eventDetail.EventLiveStreaming, EventLiveStreamingLink:eventDetail.EventLiveStreamingLink})
+
+	if err!= nil{
+		statusMsg = "Error creating event desc"
+		panic(err)
+	}else{ statusMsg = "created event desc"}
+	return statusMsg
+}
+
+func (a addingToDB) CreateComments(comment string, eventId int)string{
+	var statusMsg string
+	var comm CR.EventComments
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	eventCommColl := session.DB(CR.DBInstance).C(CR.EventCommentColl)
+
+	err = eventCommColl.Find(bson.M{"eventid":eventId}).One(&comm)
+
+	if(comm.EventId ==0){
+		thisComment := []string{comment}
+		err = eventCommColl.Insert(&CR.EventComments{EventId:eventId,EventComments:thisComment })
+	}else{
+		err = eventCommColl.Update(bson.M{"eventid":eventId},bson.M{"$push":bson.M{"eventcomments":comment}})
+	}
+
+	if err!= nil{
+		statusMsg = "Error posting comments"
+		panic(err)
+	}else{ statusMsg = "posted comments"}
+	return statusMsg
+}
+
+func (a addingToDB) CreatePoll (poll CR.Polling) string{
+	var statusMsg string
+	var polls CR.Polling
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	pollColl := session.DB(CR.DBInstance).C(CR.PollColl)
+	err = pollColl.Find(bson.M{}).Sort("-pollid").Limit(1).One(&polls)
+	poll.PollingId = polls.PollingId+1
+
+	err = pollColl.Insert(&CR.Polling{PollingId:poll.PollingId, PollingName:poll.PollingName,
+					PollingItems:poll.PollingItems})
+	if err!= nil{
+		statusMsg = "Error posting poll"
+		panic(err)
+	}else{ statusMsg = "posted poll"}
+	return statusMsg
 }
 
 

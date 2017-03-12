@@ -37,6 +37,33 @@ type Events struct {
 	EventActive bool
 }
 
+type EventDetails struct{
+	EventId int
+	EventDetail string
+	EventLiveStreaming bool
+	EventLiveStreamingLink string
+	EventPollId int
+	//EventComments []string
+	//EventPictures
+}
+
+type EventComments struct {
+	EventId int
+	EventComments []string
+}
+
+type Polling struct{
+	PollingId int
+	PollingName string
+	PollingItems []PollingEntries
+}
+
+type PollingEntries struct{
+	ItemId int
+	Item string
+	Votes int
+}
+
 func BoolToByte(str bool) byte {
 	switch str {
 		case true:

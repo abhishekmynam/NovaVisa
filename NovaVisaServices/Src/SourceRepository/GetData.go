@@ -13,6 +13,9 @@ type getFromDB interface {
 	GetAuthPswd (email string)string
 	GetActiveEventsList() []CR.Events
 	GetAllEventsList() []CR.Events
+	GetEventDetails(eventId int) CR.EventDetails
+	GetEventComments(eventId int) CR.EventComments
+	GetPollResults(pollId int) CR.Polling
 }
 
 type gettingFromDB struct{}
@@ -103,25 +106,21 @@ func (g gettingFromDB) GetActiveEventsList() []CR.Events{
 		panic(err)
 	}
 	return eventList
+}
 
-	/*
-	bson.M{
-    "queryPlanner": bson.M{
-    "plannerVersion":1,
-    "namespace":"hairbuddy.events",
-    "indexFilterSet":false,
-    "parsedQuery": bson.M{
-        "$and":[]interface {}{
-            bson.M{
-                "employee": bson.M{"$eq":"57c36bdfe5b07e10ae5526ee"}
-            },
-            bson.M{
-                "start":bson.M{"$lte":1474491600}
-            },
-            bson.M{
-                "start": bson.M{"$gte":1474462800}
-            } */
-
+func (g gettingFromDB) GetEventDetails(eventId int) CR.EventDetails{
+	var eventDetail CR.EventDetails
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	eventColl := session.DB(CR.DBInstance).C(CR.EventDetailColl)
+	err = eventColl.Find(bson.M{"eventid":eventId}).Select(nil).One(&eventDetail)
+	if err!= nil{
+		panic(err)
+	}
+	return  eventDetail
 }
 
 
@@ -140,4 +139,36 @@ func (g gettingFromDB) GetAuthPswd (email string)string{
 		panic(err)
 	}
 	return pswd.Pswd
+}
+
+func (g gettingFromDB) GetEventComments(eventId int) CR.EventComments{
+	var comments CR.EventComments
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	eventColl := session.DB(CR.DBInstance).C(CR.EventCommentColl)
+
+	err = eventColl.Find(bson.M{"eventid":eventId}).One(&comments)
+	if err!= nil{
+		panic(err)
+	}
+	return comments
+}
+
+func (g gettingFromDB) GetPollResults(pollId int) CR.Polling{
+	var polls CR.Polling
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	pollColl := session.DB(CR.DBInstance).C(CR.PollColl)
+
+	err = pollColl.Find(bson.M{"pollId":pollId}).One(&polls)
+	if err!= nil{
+		panic(err)
+	}
+	return polls
 }
