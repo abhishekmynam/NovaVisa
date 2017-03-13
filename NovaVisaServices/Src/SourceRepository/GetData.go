@@ -166,7 +166,7 @@ func (g gettingFromDB) GetPollResults(pollId int) CR.Polling{
 	defer session.Close()
 	pollColl := session.DB(CR.DBInstance).C(CR.PollColl)
 
-	err = pollColl.Find(bson.M{"pollId":pollId}).One(&polls)
+	err = pollColl.Find(bson.M{"pollingid":pollId}).One(&polls)
 	if err!= nil{
 		panic(err)
 	}

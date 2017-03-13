@@ -30,32 +30,58 @@ func main() {
 	//getEventdesc()
 	//createComment()
 	//getComment()
-	polls()
+	//polls()
+	//testingThis()
+	pollsRelated()
 }
-func polls(){
+func testingThis()CR.Polling{
 	var poll CR.Polling
-	var pollEntry CR.PollingEntries
-	var pollEntry1 CR.PollingEntries
-	//var polls []CR.PollingEntries
-	poll.PollingName = "poll 1"
+	var pollEntry = []CR.PollingEntries{
+		CR.PollingEntries{
+			ItemId: 1,
+			Item: "Item 1",
+			Votes :0,
+		},
+		CR.PollingEntries{
+			ItemId: 2,
+			Item: "Item 2",
+			Votes :0,
+		},
+	}
 
-	pollEntry.ItemId = 1
-	pollEntry.Item= "item 1"
-	pollEntry.Votes= 0
-	//polls= append(polls,pollEntry)
-	pollEntry1.ItemId = 2
-	pollEntry1.Item= "item 2"
-	pollEntry1.Votes= 0
-	//polls= append(polls,pollEntry1)
+	poll.PollingItems = pollEntry
+	poll.PollingName = "first poll"
+	fmt.Println(poll)
+	return poll
 
-	polls1 := []CR.PollingEntries{pollEntry,pollEntry1}
-	poll.PollingItems = polls1
-	statusMsg := OR.EventManage().PostAPoll(poll)
-	statusMsg = OR.EventManage().PostVote(1,1)
+}
+
+func pollsRelated(){
+	var Thispoll CR.Polling
+	var ThispollEntry = []CR.PollingEntries{
+		CR.PollingEntries{
+			ItemId: 1,
+			Item: "Item 1",
+			Votes :0,
+		},
+		CR.PollingEntries{
+			ItemId: 2,
+			Item: "Item 2",
+			Votes :0,
+		},
+	}
+
+	Thispoll.PollingItems = ThispollEntry
+	Thispoll.PollingName = "first poll"
+	//statusMsg := OR.EventManage().PostAPoll(Thispoll)
+	fmt.Println(Thispoll)
+	statusMsg := OR.EventManage().PostVote(1,1)
 	thisObject := OR.EventManage().GetPollResults(1)
 	fmt.Println(statusMsg)
 	fmt.Println(thisObject)
+	fmt.Println(statusMsg)
 }
+
 
 func getComment(){
 	comment := SR.GetFromDB().GetEventComments(2)

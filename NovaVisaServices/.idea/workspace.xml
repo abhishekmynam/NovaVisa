@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnitTests.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UnitTests.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Src/Tests/UnitTests.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="280">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#14#231#0" expanded="true" />
               </folding>
@@ -47,36 +47,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventManagement.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/OperationalRepository/EventManagement.go">
+      <file leaf-file-name="UpdateDataInVisa.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Src/SourceRepository/UpdateDataInVisa.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="80" column="35" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+            <state relative-caret-position="694">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdateDataInVisa.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/SourceRepository/UpdateDataInVisa.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-              <folding>
-                <marker date="1489336913965" expanded="true" signature="3518:3621" ph="{...}" />
-                <marker date="1489336913965" expanded="true" signature="3544:3618" ph="{...}" />
-                <marker date="1489336913965" expanded="true" signature="3788:3835" ph="{...}" />
-                <marker date="1489336913965" expanded="true" signature="3839:3861" ph="{...}" />
-              </folding>
-            </state>
+      <file leaf-file-name="NovaVisa/Nova/Polling" pinned="false" current-in-tab="false">
+        <entry file="mongo://NovaVisa/Nova/Polling">
+          <provider selected="true" editor-type-id="MongoData">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetData.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GetData.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Src/SourceRepository/GetData.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="125">
+              <caret line="150" column="69" selection-start-line="150" selection-start-column="69" selection-end-line="150" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -85,8 +77,8 @@
       <file leaf-file-name="AddToVisa.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Src/SourceRepository/AddToVisa.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2036">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="401">
+              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,8 +87,8 @@
       <file leaf-file-name="DataTypes.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Src/ConfigRepository/DataTypes.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+            <state relative-caret-position="1037">
+              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="63" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -136,11 +128,11 @@
         <option value="$PROJECT_DIR$/Src/OperationalRepository/UserManagement.go" />
         <option value="$PROJECT_DIR$/Src/ConfigRepository/DBConnection.go" />
         <option value="$PROJECT_DIR$/Src/SourceRepository/AddToVisa.go" />
-        <option value="$PROJECT_DIR$/Src/SourceRepository/UpdateDataInVisa.go" />
-        <option value="$PROJECT_DIR$/Src/SourceRepository/GetData.go" />
         <option value="$PROJECT_DIR$/Src/OperationalRepository/EventManagement.go" />
         <option value="$PROJECT_DIR$/Src/ConfigRepository/DataTypes.go" />
         <option value="$PROJECT_DIR$/Src/Tests/UnitTests.go" />
+        <option value="$PROJECT_DIR$/Src/SourceRepository/UpdateDataInVisa.go" />
+        <option value="$PROJECT_DIR$/Src/SourceRepository/GetData.go" />
       </list>
     </option>
   </component>
@@ -153,8 +145,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -181,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -341,9 +334,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -885,15 +877,16 @@
       <workItem from="1488849943686" duration="3046000" />
       <workItem from="1488904813923" duration="23822000" />
       <workItem from="1489069553353" duration="6897000" />
-      <workItem from="1489149672665" duration="32558000" />
+      <workItem from="1489149672665" duration="32643000" />
+      <workItem from="1489414375262" duration="4764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101712000" />
+    <option name="totallyTimeSpent" value="106561000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -902,18 +895,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24495289" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24485373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="989" y="88" width="172" height="460" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22777778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1515625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3257066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3488624" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -949,7 +942,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>224</line>
+          <line>250</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
@@ -994,91 +987,81 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>157</line>
+          <line>183</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>163</line>
+          <line>189</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>100</line>
+          <line>126</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>161</line>
-          <properties />
+          <line>187</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>159</line>
-          <properties />
+          <line>185</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/OperationalRepository/EventManagement.go</url>
           <line>27</line>
-          <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/Src/SourceRepository/AddToVisa.go</url>
+          <line>142</line>
           <properties />
-          <option name="timeStamp" value="85" />
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>54</line>
+          <line>78</line>
           <properties />
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="88" />
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Src/SourceRepository/AddToVisa.go</url>
-          <line>150</line>
+          <line>153</line>
           <properties />
-          <option name="timeStamp" value="89" />
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Src/Tests/UnitTests.go</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/Src/SourceRepository/GetData.go</url>
+          <line>169</line>
           <properties />
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Src/SourceRepository/GetData.go</url>
+          <line>166</line>
+          <properties />
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="96" />
+      <option name="time" value="120" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="thisPoll.PollingItems" />
+        <watch expression="j.ItemId == itemId" />
+        <watch expression="thisPoll.PollingName" />
+        <watch expression="thisPoll.PollingItems" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Src/OperationalRepository/UserManagement.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Src/SourceRepository/GetData.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1134,12 +1117,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="68" />
-          <folding>
-            <marker date="1489336913965" expanded="true" signature="3518:3621" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3544:3618" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3788:3835" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3839:3861" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,12 +1158,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-          <folding>
-            <marker date="1489336913965" expanded="true" signature="3518:3621" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3544:3618" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3788:3835" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3839:3861" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1241,12 +1214,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-          <folding>
-            <marker date="1489336913965" expanded="true" signature="3518:3621" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3544:3618" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3788:3835" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3839:3861" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1374,15 +1342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="542" column="0" selection-start-line="542" selection-start-column="0" selection-end-line="542" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1399,7 +1358,7 @@
         <state relative-caret-position="17">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
-            <element signature="e#14#192#0" expanded="true" />
+            <element signature="e#14#192#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1420,58 +1379,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Src/SourceRepository/UpdateDataInVisa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-          <folding>
-            <marker date="1489336913965" expanded="true" signature="3518:3621" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3544:3618" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3788:3835" ph="{...}" />
-            <marker date="1489336913965" expanded="true" signature="3839:3861" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Src/OperationalRepository/EventManagement.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="1326">
           <caret line="80" column="35" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Src/SourceRepository/AddToVisa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2036">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Src/ConfigRepository/DataTypes.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+        <state relative-caret-position="1037">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="63" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Src/SourceRepository/GetData.go">
+    <entry file="file://$PROJECT_DIR$/Src/SourceRepository/AddToVisa.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="401">
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="542" column="0" selection-start-line="542" selection-start-column="0" selection-end-line="542" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/runtime/malloc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="528" column="0" selection-start-line="528" selection-start-column="0" selection-end-line="528" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/SourceRepository/UpdateDataInVisa.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Src/Tests/UnitTests.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#14#231#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/SourceRepository/GetData.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="150" column="69" selection-start-line="150" selection-start-column="69" selection-end-line="150" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -114,13 +114,13 @@ func (u updatingDB)UpdatePoll(pollId int, itemId int)string{
 	defer session.Close()
 	pollColl := session.DB(CR.DBInstance).C(CR.PollColl)
 
-	err = pollColl.Find(bson.M{"pollid":pollId}).One(&thisPoll)
+	err = pollColl.Find(bson.M{"pollingid":pollId}).One(&thisPoll)
 	for i,j := range thisPoll.PollingItems{
 		if(j.ItemId == itemId){
 			thisPoll.PollingItems[i].Votes = thisPoll.PollingItems[i].Votes+1
 		}
 	}
-	err = pollColl.Update(bson.M{"pollid":pollId},&CR.Polling{PollingId:pollId, PollingName:thisPoll.PollingName,
+	err = pollColl.Update(bson.M{"pollingid":pollId},&CR.Polling{PollingId:pollId, PollingName:thisPoll.PollingName,
 					PollingItems:thisPoll.PollingItems})
 	if err!= nil{
 		statusMsg = "Error polling"
