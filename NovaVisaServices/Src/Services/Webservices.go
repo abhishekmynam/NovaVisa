@@ -7,7 +7,8 @@ import (
 	//flatbuffers "github.com/google/flatbuffers/go"
 	OR "OperationalRepository"
 	//fb "FlatBuffers/FlatBufs"
-//	CR "ConfigRepository"
+	//CR "ConfigRepository"
+	"strconv"
 )
 
 
@@ -18,6 +19,9 @@ func main() {
 	http.HandleFunc("/allevents",getAllEvents)
 	http.HandleFunc("/activeevents",getActiveEvents)
 	http.HandleFunc("/allpolls", getAllPolls)
+	http.HandleFunc("/geteventdesc", getEventDesc)
+	http.HandleFunc("/getcomments", getComments)
+	http.HandleFunc("/getpollresults",getPollResults)
 	http.ListenAndServe("localhost:8080", nil)
 
 }
@@ -59,4 +63,44 @@ func getAllPolls(w http.ResponseWriter, r *http.Request){
 	fmt.Fprintf(w,string(jsonPollList))
 }
 
+func getEventDesc (w http.ResponseWriter, r *http.Request) {
+	var eventId int
+	r.ParseForm()
+	for key, j := range r.Form {
+		if (key == "eventid") {
+			eventId,_= strconv.Atoi(j[0])
+		}
+	}
+	eventDesc := OR.EventManage().GetEventDesc(eventId)
+	jsonEventDesc,_ := json.Marshal(eventDesc)
+	fmt.Fprintf(w,string(jsonEventDesc))
 
+}
+
+func getComments (w http.ResponseWriter, r *http.Request) {
+	var eventId int
+	r.ParseForm()
+	for key, j := range r.Form {
+		if (key == "eventid") {
+			eventId,_= strconv.Atoi(j[0])
+		}
+	}
+	eventDesc := OR.EventManage().GetComments(eventId)
+	jsonComments,_ := json.Marshal(eventDesc)
+	fmt.Fprintf(w,string(jsonComments))
+
+}
+
+func getPollResults (w http.ResponseWriter, r *http.Request) {
+	var pollId int
+	r.ParseForm()
+	for key, j := range r.Form {
+		if (key == "pollid") {
+			pollId,_= strconv.Atoi(j[0])
+		}
+	}
+	eventDesc := OR.EventManage().GetPollResults(pollId)
+	jsonPollRes,_ := json.Marshal(eventDesc)
+	fmt.Fprintf(w,string(jsonPollRes))
+
+}
