@@ -32,7 +32,13 @@ func main() {
 	//getComment()
 	//polls()
 	//testingThis()
-	pollsRelated()
+	//pollsRelated()
+	getPollsList()
+}
+
+func getPollsList(){
+	pollsList := OR.EventManage().GetPollList()
+	fmt.Println(pollsList)
 }
 func testingThis()CR.Polling{
 	var poll CR.Polling
@@ -72,12 +78,11 @@ func pollsRelated(){
 	}
 
 	Thispoll.PollingItems = ThispollEntry
-	Thispoll.PollingName = "first poll"
+	Thispoll.PollingName = "Second poll"
 	//statusMsg := OR.EventManage().PostAPoll(Thispoll)
-	fmt.Println(Thispoll)
-	statusMsg := OR.EventManage().PostVote(1,1)
-	thisObject := OR.EventManage().GetPollResults(1)
-	fmt.Println(statusMsg)
+	//statusMsg:= OR.EventManage().PostAPoll(Thispoll)
+	statusMsg := OR.EventManage().PostVote(2,1)
+	thisObject := OR.EventManage().GetPollResults(2)
 	fmt.Println(thisObject)
 	fmt.Println(statusMsg)
 }

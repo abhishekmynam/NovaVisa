@@ -13,28 +13,50 @@ import (
 
 func main() {
 	http.HandleFunc("/activeannouncements",getActiveAnnouncements)
-	http.ListenAndServe("localhost:1337", nil)
+	http.HandleFunc("/allannouncements",getAllAnnouncements)
+	http.HandleFunc("/allusers",getAllUsers)
+	http.HandleFunc("/allevents",getAllEvents)
+	http.HandleFunc("/activeevents",getActiveEvents)
+	http.HandleFunc("/allpolls", getAllPolls)
+	http.ListenAndServe("localhost:8080", nil)
 
 }
 
 func getActiveAnnouncements(w http.ResponseWriter, r *http.Request){
-	annList := OR.AnnouncementManage().GetAllAnnouncements()
-	/*builder := flatbuffers.NewBuilder(1024)
-
-	for _,j := range annList{
-		//AnnName := builder.CreateString(j.AnnTitle)
-		fb.AnnouncementStart(builder)
-		fb.AnnouncementAddAnnId(builder,int32(j.AnnID))
-		fb.AnnouncementAddAnnTitle(builder,builder.CreateString(j.AnnTitle))
-		fb.AnnouncementAddAnnText(builder, builder.CreateString(j.AnnText))
-		fb.AnnouncementAddAnnActive(builder,CR.BoolToByte(j.AnnActive))
-		fb.AnnouncementAddAnnDate(builder,builder.CreateString(j.AnnDate))
-		builder.PrependUOffsetT(builder.CreateString(j.AnnTitle))
-	}
-	AnnouncementList := builder.EndVector(len(annList))
-	fmt.Println(string(AnnouncementList))*/
+	annList := OR.AnnouncementManage().GetActiveAnnouncements()
 	jsonAnnList,_ := json.Marshal(annList)
 	fmt.Fprintf(w,string(jsonAnnList))
+}
+
+func getAllAnnouncements(w http.ResponseWriter, r *http.Request){
+	annList := OR.AnnouncementManage().GetAllAnnouncements()
+	jsonAnnList,_ := json.Marshal(annList)
+	fmt.Fprintf(w,string(jsonAnnList))
+}
+
+func getAllUsers(w http.ResponseWriter, r *http.Request){
+	userList := OR.UserManage().GetAllUsers()
+	jsonUserList,_ := json.Marshal(userList)
+	fmt.Fprintf(w,string(jsonUserList))
+}
+
+func getAllEvents(w http.ResponseWriter, r *http.Request) {
+	eventList := OR.EventManage().GetAllEvents()
+	jsonEventList,_ := json.Marshal(eventList)
+	fmt.Fprintf(w,string(jsonEventList))
+}
+
+func getActiveEvents(w http.ResponseWriter, r *http.Request) {
+	eventList := OR.EventManage().GetActiveEvents()
+	jsonEventList,_ := json.Marshal(eventList)
+	fmt.Fprintf(w,string(jsonEventList))
+
+}
+
+func getAllPolls(w http.ResponseWriter, r *http.Request){
+	pollList := OR.EventManage().GetPollList()
+	jsonPollList,_ := json.Marshal(pollList)
+	fmt.Fprintf(w,string(jsonPollList))
 }
 
 

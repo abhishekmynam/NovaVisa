@@ -16,6 +16,7 @@ type getFromDB interface {
 	GetEventDetails(eventId int) CR.EventDetails
 	GetEventComments(eventId int) CR.EventComments
 	GetPollResults(pollId int) CR.Polling
+	GetPollList()[]CR.Polling
 }
 
 type gettingFromDB struct{}
@@ -167,6 +168,21 @@ func (g gettingFromDB) GetPollResults(pollId int) CR.Polling{
 	pollColl := session.DB(CR.DBInstance).C(CR.PollColl)
 
 	err = pollColl.Find(bson.M{"pollingid":pollId}).One(&polls)
+	if err!= nil{
+		panic(err)
+	}
+	return polls
+}
+
+func (g gettingFromDB)GetPollList()[]CR.Polling{
+	var polls []CR.Polling
+	session, err:= mgo.Dial(CR.DBserver)
+	if err!= nil{
+		panic(err)
+	}
+	defer session.Close()
+	pollColl := session.DB(CR.DBInstance).C(CR.PollColl)
+	err = pollColl.Find(bson.M{}).Select(bson.M{"pollingid":1,"pollingname":1}).Sort("-pollingid").All(&polls)
 	if err!= nil{
 		panic(err)
 	}

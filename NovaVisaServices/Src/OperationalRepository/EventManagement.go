@@ -7,14 +7,15 @@ type EventManagement interface{
 	NewEventAddition(newEvent CR.Events, eventDesc CR.EventDetails)string
 	EventUpdate (newEvent CR.Events, eventDesc CR.EventDetails)string
 	EventDeactivate(newEvent CR.Events)string
+	PostAPoll(newPoll CR.Polling) string
+	PostVote (pollId int, itemId int)string
+	PostComment(eventId int, comment string )string
 	GetAllEvents()[]CR.Events
 	GetActiveEvents()[]CR.Events
 	GetEventDesc(eventId int)CR.EventDetails
-	PostComment(eventId int, comment string )string
 	GetComments(eventId int)CR.EventComments
-	PostAPoll(newPoll CR.Polling) string
-	PostVote (pollId int, itemId int)string
 	GetPollResults(pollId int)CR.Polling
+	GetPollList()[]CR.Polling
 }
 type eventMgmt struct{}
 
@@ -91,5 +92,11 @@ func (e eventMgmt) PostVote (pollId int, itemId int)string{
 func (e eventMgmt) GetPollResults(pollId int)CR.Polling{
 	var pollResults CR.Polling
 	pollResults = SR.GetFromDB().GetPollResults(pollId)
+	return pollResults
+}
+
+func (e eventMgmt) GetPollList()[]CR.Polling{
+	var pollResults []CR.Polling
+	pollResults = SR.GetFromDB().GetPollList()
 	return pollResults
 }
