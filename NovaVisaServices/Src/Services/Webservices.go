@@ -23,7 +23,6 @@ func main() {
 	http.HandleFunc("/getcomments", getComments)
 	http.HandleFunc("/getpollresults",getPollResults)
 	http.ListenAndServe("localhost:8080", nil)
-
 }
 
 func getActiveAnnouncements(w http.ResponseWriter, r *http.Request){
