@@ -28,6 +28,11 @@ type Announcement struct{
 	AnnActive bool
 }
 
+type FullEvent struct{
+	EventObj Events
+	EventDesc EventDetails
+}
+
 type Events struct {
 	EventId int
 	EventTitle string

@@ -4,8 +4,8 @@ import (SR "SourceRepository"
 	CR "ConfigRepository"
 )
 type EventManagement interface{
-	NewEventAddition(newEvent CR.Events, eventDesc CR.EventDetails)string
-	EventUpdate (newEvent CR.Events, eventDesc CR.EventDetails)string
+	NewEventAddition(fullEvent CR.FullEvent)string
+	EventUpdate (fullEvent CR.FullEvent)string
 	EventDeactivate(newEvent CR.Events)string
 	PostAPoll(newPoll CR.Polling) string
 	PostVote (pollId int, itemId int)string
@@ -23,16 +23,20 @@ func EventManage() EventManagement{
 	return &eventMgmt{}
 }
 
-func (e eventMgmt) NewEventAddition(newEvent CR.Events, eventDesc CR.EventDetails)string{
+func (e eventMgmt) NewEventAddition(fullEvent CR.FullEvent)string{
 	var statusMsg string
+	newEvent := fullEvent.EventObj
+	eventDesc := fullEvent.EventDesc
 	eventId := SR.AddToDB().CreateNewEvent(newEvent)
 	eventDesc.EventId = eventId
 	statusMsg = SR.AddToDB().CreateEventDesc(eventDesc)
 	return statusMsg
 }
 
-func (e eventMgmt)EventUpdate (newEvent CR.Events, eventDesc CR.EventDetails)string{
+func (e eventMgmt)EventUpdate (fullEvent CR.FullEvent)string{
 	var statusMsg string
+	newEvent := fullEvent.EventObj
+	eventDesc := fullEvent.EventDesc
 	statusMsg = SR.UpdateData().UpdateEvent(newEvent)
 	if (eventDesc.EventId == 0 && statusMsg !="Error updating event"){
 		statusMsg = SR.UpdateData().UpdateEventDesc(eventDesc)
